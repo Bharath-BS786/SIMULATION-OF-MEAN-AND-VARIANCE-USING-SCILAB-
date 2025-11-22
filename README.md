@@ -1,4 +1,4 @@
-# SIMULATION-OF-MEAN-AND-VARIANCE-USING-SCILAB-
+<img width="1920" height="1200" alt="Screenshot 2025-11-16 110905" src="https://github.com/user-attachments/assets/46d63092-f5e3-42e4-afc4-94077998a4b2" /># SIMULATION-OF-MEAN-AND-VARIANCE-USING-SCILAB-
 __AIM:__
 
 To write a program for mean, variance and cross correlation in SCILAB and verify the output. 
@@ -36,7 +36,71 @@ __PROCEDURE:__
 
 __PROGRAM:__
 
+clear;
+clc;
+
+// === Mean Value ===
+
+// Define function for Mean of X
+function X = f(x)
+    z = 3*(1 - x)^2;   // Marginal Probability Density Function
+    X = x * z;         // X = x * f(x)
+endfunction
+
+a = 0;
+b = 1;
+EX = intg(a, b, f);    // Mean value of X
+
+// Define function for Mean of Y
+function Y = c(y)
+    z = 3*(1 - y)^2;   // Marginal Probability Density Function
+    Y = y * z;
+endfunction
+
+EY = intg(a, b, c);    // Mean value of Y
+
+disp(EX, "i) Mean of X = ");
+disp(EY, "Mean of Y = ");
+
+// === Variance ===
+
+function X2 = g(x)
+    z = 3*(1 - x)^2;   // PDF
+    X2 = x^2 * z;      // x^2 * f(x)
+endfunction
+
+EX2 = intg(a, b, g);   // E[X^2]
+
+function Y2 = h(y)
+    z = 3*(1 - y)^2;   // PDF
+    Y2 = y^2 * z;
+endfunction
+
+EY2 = intg(a, b, h);   // E[Y^2]
+
+vX2 = EX2 - (EX)^2;    // Variance of X
+vY2 = EY2 - (EY)^2;    // Variance of Y
+
+disp(vX2, "ii) Variance of X = ");
+disp(vY2, "Variance of Y = ");
+
+// === Cross Correlation ===
+
+x = input("Type in the reference sequence (x): ");
+y = input("Type in the second sequence (y): ");
+
+n1 = max(size(y)) - 1;
+r = corr(x, y, n1);
+
+plot2d3(r);
+xtitle("Cross Correlation of x and y");
+xlabel("Lag");
+ylabel("Correlation Coefficient");
 __OUTPUT GRAPH:__
+<img width="661" height="351" alt="Screenshot 2025-11-16 110928" src="https://github.com/user-attachments/assets/30283719-3c2b-4e99-9cf0-42451d5a900f" />
+
+<img width="1920" height="1200" alt="Screenshot 2025-11-16 110905" src="https://github.com/user-attachments/assets/a5044ee5-9aaf-4c3a-8840-c5caaf767d52" />
+
 
 __RESULT:__
 
