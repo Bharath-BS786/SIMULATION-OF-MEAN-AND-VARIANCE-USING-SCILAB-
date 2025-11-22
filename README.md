@@ -1,4 +1,3 @@
-<img width="1920" height="1200" alt="Screenshot 2025-11-16 110905" src="https://github.com/user-attachments/assets/46d63092-f5e3-42e4-afc4-94077998a4b2" /># SIMULATION-OF-MEAN-AND-VARIANCE-USING-SCILAB-
 __AIM:__
 
 To write a program for mean, variance and cross correlation in SCILAB and verify the output. 
@@ -104,3 +103,4 @@ __OUTPUT GRAPH:__
 
 __RESULT:__
 
+![WhatsApp Image 2025-11-22 at 22 06 28_e12734a3](https://github.com/user-attachments/assets/b1f30765-22ba-4428-98ec-e18472cdb7dd)
