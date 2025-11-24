@@ -34,7 +34,7 @@ __PROCEDURE:__
 6.Verify the generated results
 
 __PROGRAM:__
-
+```
 clear;
 clc;
 
@@ -95,7 +95,7 @@ plot2d3(r);
 xtitle("Cross Correlation of x and y");
 xlabel("Lag");
 ylabel("Correlation Coefficient");
-
+```
 __OUTPUT GRAPH:__
 
 <img width="661" height="351" alt="Screenshot 2025-11-16 110928" src="https://github.com/user-attachments/assets/30283719-3c2b-4e99-9cf0-42451d5a900f" />
